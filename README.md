@@ -143,26 +143,30 @@ Here are the classes in the dataset, as well as 10 random images from each:
 The classes are completely mutually exclusive. There is no overlap between automobiles and trucks. "Automobile" includes sedans, SUVs, things of that sort. "Truck" includes only big trucks. Neither includes pickup trucks.
 
 ## Image classification using Convolutional Neural Network (CNN) model on CIFAR-10 dataset
-The model consists of 4 convolutional layers. Each of these convolutional layers are followed by a MaxPooling layer, a Droput layer and Batch normalization. The output of the earlier layers if flattened followed by 3 dense layers which have their own dropout and Batch normalization layers. The final layer consists of a dense layer with 10 neurons and soft-max activation to give the final ouput (prediction).
+The model consists of 4 convolutional layers. Each of these convolutional layers are followed by a MaxPooling layer, a Droput layer and Batch normalization. The output of the earlier layers if flattened followed by 4 dense layers which have their own dropout and Batch normalization layers. The final layer consists of a dense layer with 10 neurons and soft-max activation to give the final ouput (prediction).
 
 ## Implementation accuracy
-Train accuracy: %<br/>
-Test accuracy: %<br/>
+Train accuracy: 83.69%<br/>
+Test accuracy: 83.7%<br/>
+
+We can see that accuracy is not very high. It should be in the range of 95% to 100%. This happened because the model was trained for only 20 epochs. With a bit of tweaking of models layers, number of neurons in the dense layers, dropouts etc and training the model for 100 epochs will result in very high accuracy. But that takes up a lot of resources and time, hence I haven't implemented it for now. You can try it and do tell me what accuracies you get.
 
 ## The following additional plots and charts were made to understand the model beter.
-Loss vs Epochs
+<b>Loss vs Epochs</b>
 
-![github-small](images/Loss_vs_epoch.png)
+![github-small](plots/cifar10loss.png)
 
 
-Accuracy vs Epochs
+<b>Accuracy vs Epochs</b>
 
-![github-small](images/Accuracy_vs_Epoch.png)
+![github-small](plots/cifar10accuracy.png)
 
-Confusion Matrix -- "Truth" stands for the actual value of the classification type whereas "predicted" stands for the predicted classification by the model
+<b>Confusion Matrix</b> -- "Truth" stands for the actual value of the classification type whereas "predicted" stands for the predicted classification by the model. 
 
-![github-small](images/Confusion_Matrix.png)
+Here we can see how the confusion matrix  does not have all the elements on the diagonals. This is because of accuracy of 83.7%. As accuracy becomes higher, the diagonal matrix become full whereas rest of the matrix spaces tend to lower numbers. You can go through my <a href="https://github.com/Siddharth-ct/MNIST-dataset-classification-with-TensorFlow">MNIST dataset classification </a> repository to see better confusion matrix results.
 
-Note: Go through the Python Notebook. Each step has been explained briefly.
+![github-small](plots/cifar10cm.png)
+
+<b>Note:</b> Go through the Python Notebook. Each step has been explained briefly.
 
 
