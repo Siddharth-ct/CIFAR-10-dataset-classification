@@ -142,8 +142,45 @@ Here are the classes in the dataset, as well as 10 random images from each:
 
 The classes are completely mutually exclusive. There is no overlap between automobiles and trucks. "Automobile" includes sedans, SUVs, things of that sort. "Truck" includes only big trucks. Neither includes pickup trucks.
 
-## Image classification using Convolutional Neural Network (CNN) model on CIFAR-10 dataset
-The model consists of 4 convolutional layers. Each of these convolutional layers are followed by a MaxPooling layer, a Droput layer and Batch normalization. The output of the earlier layers if flattened followed by 4 dense layers which have their own dropout and Batch normalization layers. The final layer consists of a dense layer with 10 neurons and soft-max activation to give the final ouput (prediction).
+## Model Architecture
+
+1. Convolution with 64 filters of size of (3x3)<br>
+   Droput layer<br>
+   Batch Normalization layer
+   
+2. Convolution with 128 filters of size of (3x3)<br>
+   Droput layer<br>
+   Batch Normalization layer
+   
+3. Convolution with 256 filters of size of (3x3)<br>
+   Droput layer<br>
+   Batch Normalization layer
+   
+3. Convolution with 512 filters of size of (3x3)<br>
+   Droput layer<br>
+   Batch Normalization layer
+
+4. Flatten layer<br>
+   Dropout layer<br>
+
+5. Dense layer with 128 neurons<br>
+   Dropout layer<br>
+   Batch Normalization layer
+
+6. Dense layer with 256 neurons<br>
+   Dropout layer<br>
+   Batch Normalization layer
+
+7. Dense layer with 512 neurons<br>
+   Dropout layer<br>
+   Batch Normalization layer
+
+8. Dense layer with 1024 neurons<br>
+   Dropout layer<br>
+   Batch Normalization layer
+   
+9. Dense layer with 10 neurons (final layer with softmax activation)<br>
+
 
 ## Implementation accuracy
 Train accuracy: 83.69%<br/>
